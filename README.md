@@ -29,8 +29,8 @@ Para trabajar con este proyecto necesitas tener instalado:
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/flask-docker-app.git
-cd flask-docker-app
+git clone https://github.com/psiete/entregable4.git
+cd entregable4
 ```
 
 ### 2. Construir la imagen Docker
@@ -120,7 +120,7 @@ Una vez configurados los secretos, el pipeline automáticamente:
 ## 📁 Estructura del Proyecto
 
 ```
-flask-docker-app/
+entregable4/
 ├── app.py                          # Aplicación Flask principal
 ├── test_app.py                     # Suite de tests con pytest
 ├── requirements.txt                # Dependencias de Python
@@ -158,8 +158,8 @@ flask-docker-app/
 - **Acciones**:
   - Login a Docker Hub con credenciales seguras
   - Build y push de la imagen con dos tags:
-    - `username/flask-app:sha-del-commit` (versión específica)
-    - `username/flask-app:latest` (última versión)
+    - `psiete/flask-app:sha-del-commit` (versión específica)
+    - `psiete/flask-app:latest` (última versión)
   - Utiliza caché de registry para acelerar builds futuros
 
 ## 🔗 Endpoints de la Aplicación
