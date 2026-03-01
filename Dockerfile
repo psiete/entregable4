@@ -10,8 +10,8 @@ COPY requirements.txt .
 # Instalar las dependencias de Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar el código de la aplicación al contenedor
-COPY app.py .
+# Copiar el código de la aplicación y tests al contenedor
+COPY *.py .
 
 # Exponer el puerto 5000 (puerto estándar para Flask)
 EXPOSE 5000
