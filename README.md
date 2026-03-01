@@ -225,6 +225,43 @@ docker logs <container-id>
 docker run -it flask-app:latest /bin/bash
 ```
 
+### El puerto 5000 ya está en uso
+
+Si ves un error como `bind: address already in use`, significa que otro proceso está usando el puerto 5000.
+
+**Opción 1: Usar un puerto diferente**
+
+```bash
+# Ejecutar en el puerto 5001 en lugar de 5000
+docker run -p 5001:5000 flask-app:latest
+
+# Ahora accede a http://localhost:5001
+```
+
+**Opción 2: Identificar y detener el proceso que usa el puerto 5000 (macOS/Linux)**
+
+```bash
+# Ver qué proceso está usando el puerto 5000
+lsof -i :5000
+
+# Detener el contenedor que está en ejecución
+docker ps  # Obtener el ID del contenedor
+docker stop <container-id>
+
+# O terminar el proceso directamente
+kill -9 <PID>
+```
+
+**Opción 3: En Windows (PowerShell)**
+
+```powershell
+# Ver qué proceso está usando el puerto 5000
+netstat -ano | findstr :5000
+
+# Terminar el proceso (reemplaza PID con el número del proceso)
+taskkill /PID <PID> /F
+```
+
 ### Los tests fallan en el contenedor
 
 ```bash
